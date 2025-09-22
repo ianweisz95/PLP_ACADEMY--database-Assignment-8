@@ -1,52 +1,62 @@
-Library Management System Database
-Overview
-This repository contains the MySQL database schema for a Library Management System designed as to build a complete database management system.
+📚 Library Management System Database
+📖 Overview
 
-The database manages key entities such as Authors, Categories (Genres), Books, Library Members, Librarians, and Borrowing (Loan) records. It enforces proper relationships and constraints to ensure data integrity and reliability.
+This repository contains a MySQL database schema for a Library Management System, created as part of a full database management system project.
 
-Features
-Well-structured relational schema with appropriate primary keys and foreign keys
+The database models the core operations of a library, including managing Authors, Categories (Genres), Books, Library Members, Librarians, and Borrowing Records. It enforces data integrity through proper constraints and relationships.
 
-Relationship constraints implementing one-to-many and many-to-many associations
+✨ Features
 
-Data validation using NOT NULL, UNIQUE, and CHECK constraints
+Well-structured relational schema with proper PRIMARY KEY and FOREIGN KEY constraints.
 
-Default values for dates using CURRENT_DATE for date fields (MySQL 8.0.13+)
+One-to-Many and Many-to-Many relationships implemented (e.g., Books–Categories, Members–Books).
 
-Sample Kenyan context used in sample data (authors, places, contacts)
+Data validation with NOT NULL, UNIQUE, and CHECK constraints.
 
-Files included
-library_management.sql — SQL script containing all database creation statements including tables, constraints, and relationships.
+Default date values using CURRENT_DATE (MySQL 8.0.13+).
 
-sample_data.sql — SQL script with sample Kenyan-based data inserts to test the schema. 
-both are combine into one.
+Kenyan context in sample data (authors, locations, contacts).
 
-How to Run
-Ensure you have MySQL Server version 8.0.13 or higher installed.
+📂 Files Included
 
-Clone or download this repository.
+library_management.sql – Contains all database creation statements (tables, constraints, relationships, and sample data).
 
-Import the database schema:
+✅ Both schema and sample data are combined into a single SQL file for easy execution.
 
-bash
+🚀 How to Run
+1️⃣ Prerequisites
+
+MySQL Server 8.0.13 or higher
+
+2️⃣ Setup Steps
+
+Clone or download this repository:
+
+git clone https://github.com/your-username/library-management-system-db.git
+cd library-management-system-db
+
+
+Import the schema and data:
+
 mysql -u [username] -p < library_management.sql
-(Optional) Insert sample data:
 
-bash
-mysql -u [username] -p LibraryManagement < sample_data.sql
-Connect to the MySQL server and use the database:
 
-bash
+Connect to MySQL and select the database:
+
 mysql -u [username] -p
 USE LibraryManagement;
-Query tables to verify:
 
-sql
+
+Run sample queries to verify:
+
 SELECT * FROM Books;
 SELECT * FROM Members;
-Note:
-The schema uses DATE columns with default values set to the current date using (CURRENT_DATE), which requires MySQL 8.0.13 or later.
+SELECT * FROM Borrowing;
 
-Foreign key constraints are designed to maintain integrity, for example, when authors or categories are deleted.
+📝 Note:
 
-The Borrowing table models the many-to-many relationship between Books and Members with Loan date tracking.
+MySQL Version: The schema uses CURRENT_DATE as a default value, which requires MySQL 8.0.13+.
+
+Data Integrity: Foreign key constraints ensure cascading rules (e.g., deleting a Category does not leave orphaned Books).
+
+Borrowing Table: Implements the many-to-many relationship between Books and Members, tracking loan dates and return status.
