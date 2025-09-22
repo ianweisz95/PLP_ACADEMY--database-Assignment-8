@@ -1,4 +1,5 @@
 Library Management System Database
+
 Overview
 This repository contains the MySQL database schema for a Library Management System developed to fulfill the requirements of building a complete database management system.
 
