@@ -1,7 +1,7 @@
 -- Library Management Database
 
 -- Create the database
-CREATE DATABASE IF NOT EXISTS LibraryManagement;
+CREATE DATABASE LibraryManagement;
 USE LibraryManagement;
 
 -- Create Authors table
@@ -102,3 +102,4 @@ INSERT INTO Borrowing (BookID, MemberID, LibrarianID, LoanDate, DueDate, ReturnD
 (1, 1, 1, '2025-09-01', '2025-09-15', '2025-09-10'),
 (2, 2, 2, '2025-09-05', '2025-09-19', NULL),
 (3, 3, 1, '2025-08-20', '2025-09-03', '2025-09-02');
+
